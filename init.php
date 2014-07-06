@@ -14,6 +14,3 @@ Raven::instance()->registerSeverityMap(array(
     Log::DEBUG     => Raven_Client::DEBUG,
     Log::STRACE    => Raven_Client::DEBUG
 ));
-
-//You can register yourself a fancy logger
-Kohana::$log->attach(Log_Raven::instance(), Log::EMERGENCY, Log::ERROR);
