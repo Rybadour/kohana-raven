@@ -17,6 +17,10 @@ class Log_Raven extends Log_Writer
         if(count($messages) == 0){
             return;
         }
+		if ( ! Kohana::$config->load('raven.enabled')) {
+			return;
+		}
+
         $r = Raven::instance();
         foreach($messages as $message)
         {
